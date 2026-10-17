@@ -1,5 +1,5 @@
 /* VAYUMED catalogue, detail pages, lead gate and Google Sheets integration. */
-const GOOGLE_SHEETS_WEB_APP_URL = ""; // Add your deployed Apps Script Web App URL before launch.
+const GOOGLE_SHEETS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwYkuCpoluAxv53A7bcXGwmf76L-tcFykSYt8Tn3hI1AQdvajAaSnqqXttXNpGl6IgHjQ/exec"; // Add your deployed Apps Script Web App URL before launch.
 const PHONE = "+919989271777";
 const products = [
   {
