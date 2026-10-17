@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Medical Equipment Catalogue | VAYUMED Rental & Sales</title>
+    <meta name="description"
+        content="Browse VAYUMED medical equipment: oxygen concentrators, oxygen cylinders, wheelchairs, hospital beds, suction machines, BiPAP, CPAP, DVT machines, syringe pumps, monitors and ABPM machines.">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://www.vayumed.com/equipment.html">
+    <meta property="og:title" content="VAYUMED Medical Equipment Catalogue">
+    <meta property="og:description" content="Explore medical equipment for rental and purchase.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="assets/vayumed-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <div class="topbar">
+        <div class="container topbar-inner"><span>Specialised solutions for sleep, respiratory & home care</span><a
+                href="tel:+919989271777">+91 9989 271 777</a></div>
+    </div>
+    <header class="site-header">
+        <div class="container nav-wrap"><a class="brand" href="index.html"><img src="assets/vayumed-logo.png"
+                    alt="VAYUMED Medical Equipment and Services" width="230" height="92"></a><button class="menu-toggle"
+                id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav id="mainNav"><a href="index.html">Home</a><a href="equipment.html" aria-current="page">Equipment</a><a
+                    href="equipment.html?type=rental" class="protected-link">Rental</a><a
+                    href="index.html#services">Support</a><a href="index.html#about">About</a><a
+                    href="index.html#contact">Contact</a><button class="btn btn-primary open-gate">Request
+                    consultation</button></nav>
+        </div>
+    </header>
+    <main>
+        <section class="page-hero">
+            <div class="container">
+                <p class="eyebrow light">VAYUMED CATALOGUE</p>
+                <h1>Medical equipment<br><span>for care at home.</span></h1>
+                <p>Browse product tiles, explore the details page for each item and enquire about rental or purchase
+                    availability.</p>
+                <div class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>Equipment</span></div>
+            </div>
+        </section>
+        <section class="section container">
+            <div class="section-head">
+                <div>
+                    <p class="eyebrow">EQUIPMENT CATEGORIES</p>
+                    <h2>Explore our catalogue</h2>
+                    <p>Choose a category to view available types, brands and enquiry options.</p>
+                </div>
+                <div class="filter-wrap"><label for="categorySearch" class="sr-only">Search equipment</label><input
+                        id="categorySearch" type="search" placeholder="Search equipment…"></div>
+            </div>
+            <div id="equipmentTiles" class="tile-grid protected-content"></div>
+            <div class="gate-hint" id="equipmentGateHint">
+                <div class="lock-icon">⌑</div>
+                <h3>Equipment catalogue locked</h3>
+                <p>Submit your name, mobile number and email to browse category tiles and details pages.</p><button
+                    class="btn btn-primary open-gate">Unlock catalogue</button>
+            </div>
+        </section>
+        <section class="contact-section">
+            <div class="container contact-inner">
+                <div>
+                    <p class="eyebrow light">NEED HELP?</p>
+                    <h2>Not sure which equipment to enquire about?</h2>
+                    <p>Call VAYUMED and tell us what you need.</p>
+                </div><a href="tel:+919989271777" class="btn btn-white">+91 9989 271 777</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container footer-inner">
+            <div><img src="assets/vayumed-logo.png" alt="VAYUMED" width="190">
+                <p>Medical Equipment & Services</p>
+            </div>
+            <div><strong>Contact</strong><a href="tel:+919989271777">+91 9989 271 777</a><span>Rental · Sales ·
+                    Support</span></div>
+        </div>
+        <div class="container footer-bottom"><span>© <span id="year"></span> VAYUMED Medical Equipment &
+                Services.</span><span>Equipment information is general and is not medical advice.</span></div>
+    </footer>
+    <div id="leadGate" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="gateTitle">
+        <div class="modal-card"><button class="modal-close" id="closeGate" aria-label="Close dialog">×</button><img
+                src="assets/vayumed-icon.png" alt="" class="modal-icon">
+            <p class="eyebrow">WELCOME TO VAYUMED</p>
+            <h2 id="gateTitle">Let’s understand your requirement</h2>
+            <p class="muted">Enter your basic details to access equipment categories and product details.</p>
+            <form id="leadForm"><label for="leadName">Full name *</label><input id="leadName" name="name" required
+                    minlength="2" placeholder="Your full name"><label for="leadMobile">Mobile number *</label><input
+                    id="leadMobile" name="mobile" inputmode="numeric" maxlength="10" required
+                    placeholder="10-digit Indian mobile number"><label for="leadEmail">Email address *</label><input
+                    id="leadEmail" name="email" type="email" required placeholder="you@example.com"><label
+                    for="leadInterest">Equipment interest (optional)</label><select id="leadInterest" name="interest">
+                    <option value="">Select a category</option>
+                    <option>Oxygen equipment</option>
+                    <option>Wheelchairs</option>
+                    <option>Beds</option>
+                    <option>Suction machines</option>
+                    <option>BiPAP / CPAP</option>
+                    <option>DVT machine</option>
+                    <option>Syringe pumps</option>
+                    <option>Monitors</option>
+                    <option>ABPM machine</option>
+                    <option>Other</option>
+                </select>
+                <p id="leadError" class="form-error" aria-live="polite"></p><button class="btn btn-primary full-width"
+                    type="submit">Continue to website →</button><small>We use these details to respond to your
+                    enquiry.</small>
+            </form>
+        </div>
+    </div>
+    <div id="toast" class="toast hidden" role="status"></div>
+    <script src="assets/app.js"></script>
+</body>
+
+</html>

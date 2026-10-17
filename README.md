@@ -1,41 +1,40 @@
-# VAYUMED Medical Equipment & Services
+# VAYUMED Medical Equipment Website
 
-Responsive SEO-ready static website using HTML5, Tailwind CSS CDN, custom CSS and vanilla JavaScript.
+Static responsive website using HTML, Tailwind CSS browser CDN, custom CSS, and vanilla JavaScript.
 
-## Files
+## Pages
+- `index.html` — home / category preview
+- `equipment.html` — equipment tiles and search
+- `product.html?id=...` — dynamic product detail page for each equipment item
 
-- `index.html` — page structure, SEO metadata, Open Graph, Twitter Card and Schema.org structured data
-- `assets/styles.css` — custom brand and responsive styles
-- `assets/app.js` — mandatory lead gate, validation and Google Sheets integration
-- `assets/vayumed-logo.png` — VAYUMED logo
-- `assets/vayumed-icon.png` — favicon/app icon
-- `robots.txt`
-- `sitemap.xml`
+## Equipment catalog included
+- Oxygen concentrators: 5 LPM, 10 LPM
+- Oxygen cylinders: B Type, Jumbo
+- Wheelchairs
+- Beds: 2-function manual, 3-function electric, 5-function electric
+- Suction machines: single jar, double jar
+- BiPAP: ResMed, Philips, Oxymed, BMC
+- CPAP: ResMed, Philips
+- DVT compression machine
+- Syringe pumps
+- Patient monitors: 3-parameter, 5-parameter
+- ABPM machine
 
-## Lead gate
+## Run locally
+Open `index.html` directly or use VS Code Live Server.
 
-Visitors must submit Full Name, Mobile Number and Email before equipment details are unlocked.
-The unlock state is stored in `sessionStorage`.
+## Lead gate / Google Sheets
+The site requires Full Name, a valid Indian mobile number, and Email before unlocking the catalogue. The unlock is saved in `sessionStorage` for the current browser tab session.
 
-This is a client-side UX gate, not a security boundary. If product information must be truly private, serve it from a backend after server-side lead verification.
+In `assets/app.js`, set `GOOGLE_SHEETS_WEB_APP_URL` to your deployed Google Apps Script Web App URL. The frontend currently logs leads to the console if no endpoint is configured; it does not persist leads to a sheet until configured.
 
-## Google Sheets
+Important: a client-side gate is not real security. The product metadata is shipped to the browser in JavaScript. If product details must be inaccessible before form submission, move the product data behind a backend and verify access server-side.
 
-Set this value in `assets/app.js`:
+## SEO
+Includes page titles/descriptions, canonical URLs, OG metadata, MedicalBusiness schema, robots.txt and sitemap.xml. Replace `https://www.vayumed.com/` if the production domain differs. Add product detail URLs to the sitemap if you later use separate static detail pages. This dynamic product page uses query parameters, which are less ideal for product-specific SEO than individual HTML pages.
 
-`const GOOGLE_SHEETS_WEB_APP_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';`
+## Tailwind
+The browser CDN is used for easy editing. Compile Tailwind for production with the official Tailwind CLI: https://tailwindcss.com/docs/installation/tailwind-cli
 
-Recommended columns:
-
-Timestamp | Name | Mobile | Email | Equipment | Source | Page
-
-## SEO launch checklist
-
-1. Replace `https://www.vayumed.com/` with the real domain if different.
-2. Keep one clear H1 on the homepage.
-3. Submit `sitemap.xml` to Google Search Console and Bing Webmaster Tools.
-4. Add real business location/service areas once finalized.
-5. Add verified Google Business Profile details if applicable.
-6. Replace stock images with product photos you have permission to publish.
-7. Do not claim official dealership/authorization for ResMed or Philips Respironics unless verified.
-8. For production, compile Tailwind rather than relying on the browser CDN.
+## Reference-inspired layout
+The design uses common healthcare UX patterns: service-led hero, clear rental/purchase CTA, scannable category cards, detail pages, phone CTA and support steps. It does not copy the reference websites' text, code or proprietary design assets.

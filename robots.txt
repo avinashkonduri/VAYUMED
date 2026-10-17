@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /private/
-
+Disallow: /product.html
 Sitemap: https://www.vayumed.com/sitemap.xml
